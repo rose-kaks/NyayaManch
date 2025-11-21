@@ -63,6 +63,9 @@ const LoginForm = () => {
         <div className="signupLink">
           Don't have an account? <a href="/signup"> Sign Up</a>
         </div>
+        <div>
+          <a href="/">back to home</a>
+        </div>
       </div>
     </div>
   );
