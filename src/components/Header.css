@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   right: 0;
@@ -41,21 +41,21 @@
 
 .login-btn {
   border: 1.5px solid #e5e7eb;
-  background: transparent;
+  background-color: #f1f3f6;
   color: #374151;
 }
 
 .login-btn:hover {
-  background-color: #f9fafb;
+  background-color: #3d91e5;
 }
 
 .signup-btn {
-  background-color: #d97706;
-  color: white;
-  border: none;
+  background-color: #f1f3f6;
+  border: 1.5px solid #e5e7eb;
+  color: #374151;
   margin-left: 0.75rem;
 }
 
 .signup-btn:hover {
-  background-color: #b45309;
+ background-color: #3d91e5;
 }

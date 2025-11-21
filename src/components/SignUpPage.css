@@ -1,0 +1,103 @@
+/* --- Outer container (for centering and background context) --- */
+.formCardContainer {
+  /* Mimics the dark, starry background for context */
+  background: linear-gradient(135deg, #1e2a44, #0a111f); 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* --- The actual sign up card --- */
+.formCard {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  /* Soft shadow for the floating effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+  width: 100%;
+  max-width: 400px; /* Max width for the card */
+  text-align: center;
+}
+
+/* --- Welcome Text Styles (Reused from Login) --- */
+.welcomeText {
+  margin-bottom: 30px;
+}
+
+.welcomeText h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.welcomeText p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* --- Input Group Styling (Reused from Login) --- */
+.inputGroup {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 12px 12px 45px; /* Padding on the left for the icon */
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.inputField:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 1px #007bff;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+}
+
+/* --- Sign Up Button Styling (Using the orange color from the header button) --- */
+.signupButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #f7b731; /* Use the distinct orange color from the navbar 'Sign Up' button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.signupButton:hover {
+  background-color: #e5a620; /* Slightly darker orange on hover */
+}
+
+/* --- Login Link Styling --- */
+.loginLink {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #666;
+}
+
+.loginLink a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
