@@ -19,34 +19,38 @@ import VernacularVoice from "./Pages/VernacularVoice";
 import CaseStrength from "./Pages/CaseStrength";
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Header />
+    return (
+        <BrowserRouter>
+            <div className="flex flex-col min-h-screen">
+                <Header />
+                <div className="flex-grow">
+                    <Routes>
+                        {/* 1. PUBLIC ROUTES */}
+                        <Route path="/" element={<NyayaManchLandingPage />} />
+                        <Route path="/login" element={<LoginForm />} />
+                        <Route path="/signup" element={<SignupForm />} />
 
-      {/* Sidebar wraps the main application pages */}
-      <SidebarLayout>
-        <Routes>
-          {/* Your existing website routes */}
-          <Route path="/" element={<NyayaManchLandingPage />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/signup" element={<SignupForm />} />
+                        {/* 2. PROTECTED ROUTES (With Sidebar Layout) 
+                            This parent route renders <SidebarLayout>. 
+                            The children routes (dashboard, upload, etc.) 
+                            are rendered inside <Outlet /> within the layout. 
+                        */}
+                        <Route element={<SidebarLayout />}>
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/upload" element={<UploadCase />} />
+                            <Route path="/summarizer" element={<JudgementSummarizer />} />
+                            <Route path="/similar" element={<SimilarCaseFinder />} />
+                            <Route path="/forecast" element={<DelayForecast />} />
+                            <Route path="/vernacular" element={<VernacularVoice />} />
+                            <Route path="/strength" element={<CaseStrength />} />
+                        </Route>
 
-          {/* NEW sidebar routes */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/upload" element={<UploadCase />} />
-          <Route path="/summarizer" element={<JudgementSummarizer />} />
-          <Route path="/similar" element={<SimilarCaseFinder />} />
-          <Route path="/forecast" element={<DelayForecast />} />
-          <Route path="/vernacular" element={<VernacularVoice />} />
-          <Route path="/strength" element={<CaseStrength />} />
-
-          {/* 404 */}
-          <Route path="*" element={<h1>404: Page Not Found</h1>} />
-        </Routes>
-      </SidebarLayout>
-
-      <Footer />
-    </BrowserRouter>
-  );
+                        {/* 3. 404 CATCH-ALL */}
+                        <Route path="*" element={<div className="text-center p-10"><h1 className="text-4xl font-bold">404: Page Not Found</h1></div>} />
+                    </Routes>
+                </div>
+                <Footer />
+            </div>
+        </BrowserRouter>
+    );
 }
-

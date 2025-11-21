@@ -1,8 +1,11 @@
 import { useState } from "react";
-import "./SideBarLayout.css";        // << ADD THIS
+import "./SideBarLayout.css";        
+import { Outlet } from "react-router-dom";
 import { Menu, X, Home, Upload, FileText, Search, Clock, Mic, BarChart } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-export default function SidebarLayout({ children }) {
+
+export default function SidebarLayout() {
   const [open, setOpen] = useState(true);
 
   return (
@@ -15,29 +18,29 @@ export default function SidebarLayout({ children }) {
         </button>
 
         <nav>
-          <SidebarItem icon={<Home />} label="Dashboard" open={open} />
-          <SidebarItem icon={<Upload />} label="Upload New Case" open={open} />
-          <SidebarItem icon={<FileText />} label="Judgement Summarizer" open={open} />
-          <SidebarItem icon={<Search />} label="Similar Case Finder" open={open} />
-          <SidebarItem icon={<Clock />} label="Delay Forecast" open={open} />
-          <SidebarItem icon={<Mic />} label="Vernacular & Voice" open={open} />
-          <SidebarItem icon={<BarChart />} label="Case Strength" open={open} />
+          <SidebarItem icon={<Home />} label="Dashboard" open={open} to="/dashboard" />
+          <SidebarItem icon={<Upload />} label="Upload New Case" open={open} to="/upload" />
+          <SidebarItem icon={<FileText />} label="Judgement Summarizer" open={open} to="/summarizer" />
+          <SidebarItem icon={<Search />} label="Similar Case Finder" open={open} to="/similar" />
+          <SidebarItem icon={<Clock />} label="Delay Forecast" open={open} to="/forecast" />
+          <SidebarItem icon={<Mic />} label="Vernacular & Voice" open={open} to="/vernacular" />
+          <SidebarItem icon={<BarChart />} label="Case Strength" open={open} to="/strength" />
         </nav>
       </div>
 
       {/* Page Content */}
       <div className="page-content">
-        {children}
+        <Outlet />   {/* <<<<< FIX */}
       </div>
     </div>
   );
 }
 
-function SidebarItem({ icon, label, open }) {
+function SidebarItem({ icon, label, open, to }) {
   return (
-    <div className="sidebar-item">
+    <NavLink to={to} className="sidebar-item">
       {icon}
       {open && <span>{label}</span>}
-    </div>
+    </NavLink>
   );
 }

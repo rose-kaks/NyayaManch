@@ -1,7 +1,7 @@
 export default function JudgementSummarizer() {
   return (
     <div>
-      Case Strength Page
+      summ
     </div>
   );
 }

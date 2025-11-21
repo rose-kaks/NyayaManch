@@ -9,10 +9,10 @@ const Header = () => {
           <span className="logo-text">NyayaManch</span>
         </div>
         <div className="nav-buttons">
-  <Link to="/login" ><button className="login-btn">Login</button></Link>
-  <Link to="/signup" ><button className="signup-btn">Sign Up</button></Link>
-</div>
-
+          <Link to="/" ><button className="home-btn">Home</button></Link>
+          <Link to="/login" ><button className="login-btn">Login</button></Link>
+          <Link to="/signup" ><button className="signup-btn">Sign Up</button></Link>
+        </div>
       </header>
   );
 };
