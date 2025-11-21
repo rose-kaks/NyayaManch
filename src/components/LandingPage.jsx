@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingPage.css';
+import { Link } from 'react-router-dom';
 import IndiaMap from '../assets/IndMap.svg';
 
 const ScaleIcon = () => (
@@ -42,7 +43,7 @@ const NyayaManchLandingPage = () => {
             </p>
             <div className="action-buttons">
               <button className="learn-more-btn">Learn More</button>
-              <button className="join-us-btn">Join Us</button>
+              <Link to="/signup"><button className="join-us-btn">Join Us</button></Link>
             </div>
           </div>
 
