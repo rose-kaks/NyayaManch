@@ -1,0 +1,62 @@
+/* Entire layout */
+.sidebar-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;       /* IMPORTANT: prevents outer scrolling */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 24px 16px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.closed {
+  width: 64px;
+}
+
+/* Hamburger button */
+.sidebar button {
+  margin-bottom: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Nav spacing */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sidebar item */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sidebar-item:hover {
+  color: #93c5fd;
+}
+
+/* Page content */
+.page-content {
+  flex: 1;
+  overflow-y: auto;      /* ONLY THIS should scroll */
+  height: 100vh;         /* full height */
+}

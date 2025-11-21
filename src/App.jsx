@@ -1,36 +1,52 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from './components/Header';
-import NyayaManchLandingPage from './components/LandingPage';
-import LoginForm from './components/LoginPage';
-import SignupForm from './components/SignUpPage';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import SidebarLayout from "./Layouts/SideBarLayout";
 
-const App = () => {
+import NyayaManchLandingPage from "./components/LandingPage";
+import LoginForm from "./components/LoginPage";
+import SignupForm from "./components/SignUpPage";
+import Footer from "./components/Footer";
+
+// Sidebar pages
+import Dashboard from "./Pages/Dashboard";
+import UploadCase from "./Pages/UploadNewCase";
+import JudgementSummarizer from "./Pages/JudgementSummarizer";
+import SimilarCaseFinder from "./Pages/SimilarCaseFinder";
+import DelayForecast from "./Pages/DelayForecast";
+import VernacularVoice from "./Pages/VernacularVoice";
+import CaseStrength from "./Pages/CaseStrength";
+
+export default function App() {
   return (
     <BrowserRouter>
       <Header />
 
-      <Routes>
-        {/* Landing Page */}
-        <Route path="/" element={<NyayaManchLandingPage />} />
+      {/* Sidebar wraps the main application pages */}
+      <SidebarLayout>
+        <Routes>
+          {/* Your existing website routes */}
+          <Route path="/" element={<NyayaManchLandingPage />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<SignupForm />} />
 
-        {/* Login Page */}
-        <Route path="/login" element={<LoginForm />} />
+          {/* NEW sidebar routes */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/upload" element={<UploadCase />} />
+          <Route path="/summarizer" element={<JudgementSummarizer />} />
+          <Route path="/similar" element={<SimilarCaseFinder />} />
+          <Route path="/forecast" element={<DelayForecast />} />
+          <Route path="/vernacular" element={<VernacularVoice />} />
+          <Route path="/strength" element={<CaseStrength />} />
 
-        {/* Signup Page */}
-        <Route path="/signup" element={<SignupForm />} />
-
-        {/* 404 */}
-        <Route path="*" element={<h1>404: Page Not Found</h1>} />
-      </Routes>
+          {/* 404 */}
+          <Route path="*" element={<h1>404: Page Not Found</h1>} />
+        </Routes>
+      </SidebarLayout>
 
       <Footer />
     </BrowserRouter>
   );
-};
-
-export default App;
+}
 
