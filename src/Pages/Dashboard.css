@@ -1,0 +1,111 @@
+.db-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d1117;
+  padding: 25px;
+  color: #c9d1d9;
+  font-family: "Segoe UI", Tahoma;
+}
+
+.db-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #161b22;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border-bottom: 3px solid #30363d;
+  margin-bottom: 25px;
+  color: #58a6ff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.status-online { color: #38c172; }
+
+.glow-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 18px;
+  transition: all .3s ease;
+}
+.glow-card:hover {
+  border-color: #58a6ff55;
+  box-shadow: 0 0 15px rgba(88,166,255,0.3);
+}
+
+.db-upload-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.db-upload-icon { color: #58a6ff; }
+
+.db-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.db-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9em;
+}
+.db-stat-number {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #58a6ff;
+}
+
+.db-case-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.db-case-card { padding: 20px; position: relative; }
+.db-case-status { font-size: 0.85em; color: #90caf9; }
+
+.db-bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
+}
+
+.db-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.db-btn-blue { background: #58a6ff; color: #0d1117; }
+.db-btn-green { background: #38c172; color: #0d1117; }
+.db-btn-orange { background: #ff9800; color: #0d1117; }
+
+.db-notif-item { padding: 10px; border-radius: 8px; margin-top: 10px; }
+.warn { background:#4b3600; }
+.info { background:#0a3d62; }
+.success { background:#1a3b17; }
+
+.db-notifs ul, .db-notifs li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.db-upload-card {
+  cursor: pointer;
+  border-left: 4px solid #58a6ff;
+}
+.db-upload-card:hover {
+  background: #1c2128;
+  transform: translateY(-2px);
+}
