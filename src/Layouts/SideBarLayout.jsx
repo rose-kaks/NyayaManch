@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./SideBarLayout.css";        
 import { Outlet } from "react-router-dom";
-import { Menu, X, Home, Upload, FileText, Search, Clock, Mic, BarChart } from "lucide-react";
+import { Menu, X, Home, FileText, Search, Clock, Mic, BarChart, Upload } from "lucide-react";
 import { NavLink } from "react-router-dom";
-
 
 export default function SidebarLayout() {
   const [open, setOpen] = useState(true);
@@ -19,8 +18,8 @@ export default function SidebarLayout() {
 
         <nav>
           <SidebarItem icon={<Home />} label="Dashboard" open={open} to="/dashboard" />
-          <SidebarItem icon={<Upload />} label="Upload New Case" open={open} to="/upload" />
           <SidebarItem icon={<FileText />} label="Judgement Summarizer" open={open} to="/summarizer" />
+          <SidebarItem icon={<Upload />} label="Next Step Prediction" open={open} to="/upload" />
           <SidebarItem icon={<Search />} label="Similar Case Finder" open={open} to="/similar" />
           <SidebarItem icon={<Clock />} label="Delay Forecast" open={open} to="/forecast" />
           <SidebarItem icon={<Mic />} label="Vernacular & Voice" open={open} to="/vernacular" />
@@ -30,7 +29,7 @@ export default function SidebarLayout() {
 
       {/* Page Content */}
       <div className="page-content">
-        <Outlet />   {/* <<<<< FIX */}
+        <Outlet />   {/* This renders the routed page */}
       </div>
     </div>
   );

@@ -1,0 +1,173 @@
+/* --- Page Layout --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: #0d1117;
+  color: #e0e6f1;
+  padding: 20px;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.header {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #2196f3;
+}
+
+.subHeader {
+  font-size: 16px;
+  color: #99a8b9;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #30363d;
+  font-weight: 400;
+}
+
+/* --- Content Grid --- */
+.contentContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.leftColumn {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 25px;
+}
+
+.rightColumn {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(150px, auto));
+  gap: 25px;
+}
+
+/* --- Card Styles --- */
+.card {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid #30363d;
+  background-color: #1e2837;
+  transition: transform 0.2s ease;
+}
+
+.mainRecommendationCard {
+  padding: 30px;
+  background-color: #0e1a2c;
+  border: 1px solid #2196f3;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #2196f3;
+}
+
+.cardTitle.critical {
+  color: #f44336;
+}
+
+.cardTitle.warning {
+  color: #FF9800;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #e0e6f1;
+}
+
+p {
+  font-size: 14px;
+  color: #99a8b9;
+}
+
+.proceduralStrength {
+  font-weight: 600;
+  color: #2196f3;
+  margin-top: 10px;
+}
+
+.actionButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 6px;
+  color: #e0e6f1;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}
+
+/* --- Task List --- */
+.taskList {
+  list-style: none;
+  padding: 10px 0 0 0;
+  margin: 0;
+}
+
+.taskItem {
+  padding: 10px 0;
+  border-bottom: 1px dashed #30363d;
+  font-size: 15px;
+  color: #e0e6f1;
+}
+
+.taskItem.critical {
+  color: #f44336;
+}
+
+/* --- Metrics --- */
+.metricCard {
+  text-align: center;
+}
+
+.metricValue {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.detailText.bold {
+  font-weight: bold;
+  color: #e0e6f1;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.note {
+  font-size: 14px;
+  color: #99a8b9;
+}

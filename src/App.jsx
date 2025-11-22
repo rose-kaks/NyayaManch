@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 // Sidebar pages
 import Dashboard from "./Pages/Dashboard";
-import UploadCase from "./Pages/UploadNewCase";
+import UploadCase from "./Pages/NextStepPredictor";
 import JudgementSummarizer from "./Pages/JudgementSummarizer";
 import SimilarCaseFinder from "./Pages/SimilarCaseFinder";
 import DelayForecast from "./Pages/DelayForecast";
