@@ -1,100 +1,93 @@
+/* Header.css */
+
 .header {
-  position: static;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background: linear-gradient(135deg, #00122a 0%, #001733 100%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    background-color: #081c39;
+    color: #c9d1d9;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between; /* Distribute space between logo, nav, and actions */
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+    /* Gives the logo room to breathe and helps push the center block */
+    padding-right: 30px; 
 }
 
 .logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #f59e0b, #fbbf24);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
+    font-size: 24px;
+    font-weight: 700;
+    color: #58a6ff;
 }
 
-.nav-buttons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+/* --- Primary Navigation (Center) --- */
+.main-nav-links {
+    display: flex;
+    gap: 15px;
+    /* This crucial step allows the center links to take up the remaining space 
+       and center its content */
+    flex-grow: 1; 
+    justify-content: center;
 }
 
-.nav-buttons button {
-  padding: 0.7rem 1.8rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
+.nav-btn {
+    background: none;
+    border: none;
+    color: #c9d1d9;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 6px;
 }
 
-.home-btn {
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
-  border: 1.5px solid rgba(59, 130, 246, 0.3);
+.nav-btn:hover {
+    color: #ffffff;
+    background-color: #6e88a6;
 }
 
-.home-btn:hover {
-  background: #3b82f6;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+/* --- Secondary Actions (Far Right) --- */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* This pushes the action buttons as far right as possible */
+    margin-left: auto; 
 }
 
 .login-btn {
-  background: transparent;
-  color: #cbd5e1;
-  border: 1.5px solid rgba(203, 213, 225, 0.3);
+    background-color: #1f3957;
+    color: #58a6ff;
+    border: 1px solid #1f3957;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
 .login-btn:hover {
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
-  border-color: #3b82f6;
-  transform: translateY(-2px);
+    background-color: #2a4e78;
+    border-color: #00d1c1;
 }
 
 .signup-btn {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: white;
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    background-color: #00d1c1;
+    color: #0d1117;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
 }
 
 .signup-btn:hover {
-  background: linear-gradient(135deg, #d97706, #b45309);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .header {
-    padding: 0.8rem 1rem;
-  }
-  
-  .logo-text {
-    font-size: 1.3rem;
-  }
-  
-  .nav-buttons button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
+    background-color: #00e0cf;
 }
