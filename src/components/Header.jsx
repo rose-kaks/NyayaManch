@@ -11,6 +11,7 @@ const Header = () => {
         <div className="nav-buttons">
           <Link to="/" ><button className="home-btn">Home</button></Link>
            <Link to="/strength" ><button className="home-btn">Case Strength</button></Link>
+            <Link to="/similar" ><button className="home-btn">Similar Case Finder</button></Link>
           <Link to="/login" ><button className="login-btn">Login</button></Link>
           <Link to="/signup" ><button className="signup-btn">Sign Up</button></Link>
         </div>
