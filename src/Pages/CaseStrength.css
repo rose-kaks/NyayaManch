@@ -1,0 +1,310 @@
+/* ========================
+   CaseStrength Page Wrapper
+   ======================== */
+.cs-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d1117;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  color: #c9d1d9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================
+   Top Bar
+   ======================== */
+.cs-topbar {
+  background-color: #161b22;
+  border-bottom: 3px solid #30363d;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #58a6ff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.cs-topbar-status {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+.status-online {
+  color: #38c172;
+  margin-left: 5px;
+}
+
+/* ========================
+   Layout Root
+   ======================== */
+.cs-root {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.cs-left, .cs-middle, .cs-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================
+   Card Styles (Glow)
+   ======================== */
+.cs-card {
+  padding: 20px;
+  background-color: #161b22;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.glow-card:hover {
+  border-color: #58a6ff50;
+  box-shadow: 0 0 15px rgba(88,166,255,0.3);
+}
+
+/* ========================
+   Headings
+   ======================== */
+.cs-heading, .cs-subheading, .cs-section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.cs-heading {
+  color: #58a6ff;
+}
+.cs-subheading {
+  color: #58a6ff;
+}
+.cs-section-title {
+  color: #c9d1d9;
+}
+
+/* ========================
+   Left Section - Charts
+   ======================== */
+.cs-big-chart-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.cs-strong-text {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #c9d1d9;
+}
+.strength-label.strong {
+  color: #38c172;
+  font-weight: 700;
+  text-shadow: 0 0 5px #38c17290;
+}
+.cs-stack {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ========================
+   Circle Chart
+   ======================== */
+.cs-circle-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.cs-circle-svg {
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+.cs-ring-bg {
+  stroke: #21262d;
+}
+.cs-ring-progress {
+  filter: drop-shadow(0 0 5px rgba(88,166,255,0.7));
+  stroke-linecap: round;
+}
+.cs-circle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(22,27,34,0.7);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+}
+.cs-circle-value {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #58a6ff;
+  text-shadow: 0 0 8px #58a6ff80;
+}
+.percent-sign {
+  font-size: 0.6em;
+  vertical-align: top;
+  font-weight: 500;
+}
+.cs-circle-caption {
+  font-size: 0.85em;
+  color: #8b949e;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ========================
+   Middle Section
+   ======================== */
+.cs-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #30363d;
+}
+.cs-summary-item {
+  background-color: #0d1117;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  border-left: 3px solid #58a6ff;
+}
+.cs-summary-item strong { color: #c9d1d9; }
+
+.cs-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.cs-mini-card {
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-grow:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+.red-card { background-color: #3b1717; border-left: 5px solid #ff4444; }
+.red-card h5 { color: #ff8a80; }
+.green-card { background-color: #1a3b17; border-left: 5px solid #4caf50; }
+.green-card h5 { color: #81c784; }
+
+.cs-footer-note {
+  font-size: 0.75em;
+  color: #58a6ff;
+  text-align: right;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px dashed #30363d;
+}
+
+/* ========================
+   Right Section
+   ======================== */
+.right-card { padding: 15px; }
+.cs-card-title {
+  font-size: 1.2em;
+  color: #c9d1d9;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+.cs-timeline { list-style-type: none; padding-left: 15px; margin: 0; }
+.timeline-item {
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  font-size: 0.9em;
+  color: #8b949e;
+  border-left: 2px solid #30363d;
+}
+.timeline-item:last-child { border-left: none; padding-bottom: 0; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #30363d;
+  border: 2px solid #161b22;
+}
+.active-timeline {
+  color: #c9d1d9;
+}
+.active-timeline::before {
+  background-color: #58a6ff;
+  box-shadow: 0 0 8px #58a6ff80;
+}
+
+/* ========================
+   Buttons
+   ======================== */
+.cs-actions-grid { display: flex; flex-direction: column; gap: 10px; }
+.cs-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+.hover-shift:hover { transform: translateX(3px); opacity: 0.9; }
+.cs-btn-blue { background-color: #58a6ff; color: #0d1117; }
+.cs-btn-green { background-color: #38c172; color: #0d1117; }
+.cs-btn-orange { background-color: #ff9800; color: #0d1117; }
+
+/* ========================
+   Notifications
+   ======================== */
+.cs-notifs { list-style: none; padding:0; margin:0; display:flex; flex-direction: column; gap: 10px; }
+.cs-notif {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+.hover-pulse:hover { border-color: #58a6ff; box-shadow: 0 0 5px rgba(88,166,255,0.2); }
+.cs-notif-warning { background-color: #4b3600; border-left-color: #ffc107; color: #ffd54f; }
+.cs-notif-info { background-color: #0a3d62; border-left-color: #58a6ff; color: #90caf9; }
+.cs-notif-success { background-color: #1a3b17; border-left-color: #4caf50; color: #81c784; }
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 1200px) { .cs-root { grid-template-columns: 1fr 2fr 1fr; } }
+@media (max-width: 900px) {
+  .cs-root { grid-template-columns: 1fr; }
+  .cs-left { flex-direction: row; gap: 15px; }
+  .cs-left-top { min-width: 300px; flex: 1; }
+  .cs-left-stack { flex: 2; }
+  .cs-stack { justify-content: flex-start; }
+  .cs-topbar { padding: 15px 20px; }
+}
+@media (max-width: 600px) {
+  .cs-left { flex-direction: column; }
+  .cs-summary-grid { grid-template-columns: 1fr; }
+}
